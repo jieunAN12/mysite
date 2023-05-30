@@ -103,5 +103,19 @@ public class UserController {
 	}
 	
 	/* 회원정보 수정 */
+	@RequestMapping(value="/user/modify", method= {RequestMethod.GET, RequestMethod.POST} )
+	public String modify(@ModelAttribute UserVo userVo) {
+		System.out.println("UserController.modify()");
+		
+		int count = userService.modify(userVo);
+		//count = 0;
+		
+		if(count>0) {
+			return "/WEB-INF/views/main/index.jsp";
+		} else {
+			return "redirect:/user/modifyForm";
+		}
+		
+	}
 
 }

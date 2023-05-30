@@ -39,4 +39,9 @@ public class UserDao {
 		
 	}
 
+
+	public int modify(UserVo userVo) {
+		return sqlSession.update("UserDao.update", userVo);
+	}
+
 }

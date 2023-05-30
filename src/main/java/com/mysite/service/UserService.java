@@ -35,6 +35,10 @@ public class UserService {
 		UserVo userVo = userDao.selectUser(no);
 		return userVo;
 	}
+
+	public int modify(UserVo userVo) {
+		return userDao.modify(userVo);
+	}
 	
 
 }
